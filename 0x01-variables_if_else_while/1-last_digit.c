@@ -1,13 +1,13 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/*
+/**
  * main - entry function
  *
- * return always success(0)
+ * Return: always (success) 0
  *
  */
-/* main function code */
+
 int main(void)
 {
 	int n;
@@ -23,7 +23,7 @@ int main(void)
 	{
 		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, n % 10);
 	}
-	else
+	else if (n == 0)
 	{
 		printf("Last digit of %d is %d and is 0\n", n, n % 10);
 	}

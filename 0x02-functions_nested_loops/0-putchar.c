@@ -13,7 +13,7 @@ int main(void)
 	int n = sizeof(str) / sizeof(int);
 	int i;
 
-	for (i=0; i<n; i++)
+	for (i = 0; i < n; i++)
 	{
 		_putchar(str[i]);
 	}

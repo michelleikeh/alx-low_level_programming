@@ -6,6 +6,7 @@
 void jack_bauer(void)
 {
 	int      a, b, c, d, e;
+
 	c = 58;
 
 	/* a will take values 0 (48), 1-(49) and 2(50) */

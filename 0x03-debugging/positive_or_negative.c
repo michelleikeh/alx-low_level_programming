@@ -21,4 +21,4 @@ void positive_or_negative(int i)
 	{
 		printf("%d is zero\n", i);
 	}
-}			
+}	

@@ -1,8 +1,9 @@
 #include <stdio.h>
 /**
- * main - entry code
- * return: vooid
-	 */
+ * main- entry function prints prime number
+ * Return: void
+ */
+
 int main(void)
 {
 	long int n, fp;

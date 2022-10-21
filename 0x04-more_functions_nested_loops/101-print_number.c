@@ -1,4 +1,9 @@
 #include "main.h"
+/**
+ * print_number - prints a number
+ * @n: takes an integer
+ * Return: void
+ */
 
 void print_number(int n)
 {

@@ -9,18 +9,34 @@
 
 int main(void)
 {
-	int r = 0, i = 0;
-	time_t t;
+	int i, j, k, s;
+	char ch[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+		char p[58];
 
-	srand(unsigned int) time(&t));
-	while (i < 2772)
+	srand(time(NULL));
+	while (s != 2772)
 	{
-		r = rand() % 128;
-		if ((i + r) > 2772)
-			break;
-		i = i + r;
-		printf("%c", r);
+		i = k = s = 0;
+		while ((2772 - 122) > s)
+		{
+			j = rand() % 62;
+			p[i] = c[j];
+			s += c[j];
+			i++;
+		}
+		while (c[k])
+		{
+			if (c[k] == (2772 - s))
+			{
+				p[i] = c[k];
+				s += c[k];
+				i++;
+				break;
+			}
+			k++;
+		}
 	}
-	printf("%c\n", (2772 - i));
+	p[i] = '\0';
+	printf("%s", p);
 	return (0);
 }

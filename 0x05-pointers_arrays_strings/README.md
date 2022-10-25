@@ -1,6 +1,11 @@
 An introductory project on pointers. Task to do list:
-0-reset_t0_98.c function that takes a pointer to an int as parameter and updates the value it points to 98
-1-swap.c function that swaps the value of two integers
-2-strlen.c func that prints as tring followed bya new line
-3-puts.c func that prints a str
-4-print_rev.c func that prints a string in reverse
+0-reset_t0_98.c Write a function that takes a pointer to an int as parameter and updates the value it points to 98
+1-swap.c Write a function that swaps the value of two integers
+2-strlen.c Write a func that prints as tring followed bya new line
+3-puts.c Write func that prints a str
+4-print_rev.c Write a func that prints a string in reverse
+5-rev_string.c Write a func that reverses string
+6-puts2.c Write a function that prints every other character of a string
+7-puts_half.c Write afunction that prints half of a string, followed by a new line.
+8-print_arrays Write a function that prints n elements of an array of integers, followed by a new line.
+9-strcpy.c Write a function that copies the string pointed to by src, including the terminating null byte (\0), to the buffer pointed to by dest.

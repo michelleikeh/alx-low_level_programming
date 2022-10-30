@@ -21,4 +21,5 @@ void reverse_array(int *a, int n)
 			*(a + (x - 1)) = y;
 		}
 	}
+}
 

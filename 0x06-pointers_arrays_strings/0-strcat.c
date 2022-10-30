@@ -20,7 +20,7 @@ char *_strcat(char *dest, char *src)
 	while (y >= 0)
 	{
 		*(dest + x) = *(src + y);
-		if (*src + y) == '\0')
+		if (*(src + y) == '\0')
 			break;
 		x++;
 		y++;

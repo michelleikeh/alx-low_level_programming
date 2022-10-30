@@ -9,14 +9,15 @@ char *cap_string(char *s)
 {
 	int x = 0;
 	int i;
-	int wrds[] = {32, 9, 10, 44, 59, 40, 33, 63, 34, 40, 41, 123, 125);
+	int wrds[] = {32, 9, 10, 44, 59, 40, 33, 63, 34, 40, 41, 123, 125};
 
 		if (*(s + x) >= 97 && *(s + x) <= 122)
 			*(s + x) = *(s + x) - 32;
 		x++;
 
 		while (*(s + x) != '\0')
-			for (i = 0; i < 13; 1++)
+		{
+			for (i = 0; i < 13; i++)
 			{
 				if (*(s + x) == wrds[i])
 				{
@@ -25,7 +26,7 @@ char *cap_string(char *s)
 					break;
 				}
 			}
-		x++;
-	}
-	return (s);
+			x++;
+		}
+		return (s);
 }

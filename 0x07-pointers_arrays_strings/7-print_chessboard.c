@@ -1,6 +1,8 @@
 #include "main.h"
 /**
- *
+ * print_chessboard- function that prints chess board
+ * @a: an array of 8 chars
+ * Return: void
  */
 void print_chessboard(char (*a)[8])
 {

@@ -2,7 +2,13 @@
 
 This project is aimed at teaching about recursion in C programming.
 
-## Tests :heacy_check_mark:
+## Technologies
+* C files are compiled using `gcc`
+* C file are written according to `gnu89` standard
+* C files are written in accordance with `Betty doc style`
+* Tested on Ubuntu 20.04 LTS 
+
+## Tests :heavy_check_mark:
 * [tests](./tests): Folder of test files, provided by 
 ALX SE.
 

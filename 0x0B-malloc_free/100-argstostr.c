@@ -27,7 +27,7 @@ char *argstostr(int ac, char **av)
 		free(output);
 		return (NULL);
 	}
-	for (i = j = y = 0; y < x; j++ y++)
+	for (i = j = y = 0; y < x; j++, y++)
 	{
 		if (av[i][j] == '\0')
 		{

@@ -3,10 +3,11 @@
 #include <stdlib.h>
 
 /**
- * new_dog - creates a new dog
+ * new_dog- creates a new dog
  * @name: name of dog
  * @age: dog's age
  * @owner: dog's owner
+ * Return: new dog
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
@@ -27,7 +28,6 @@ dog_t *new_dog(char *name, float age, char *owner)
 	/* allocate memory space for name and owner */
 	p_dog->name = malloc(nName + 1);
 	p_dog->owner = malloc(nOwner + 1);
-	
 	if (!(p_dog->name) || !(p_dog->owner))
 	{
 		free(p_dog->name);

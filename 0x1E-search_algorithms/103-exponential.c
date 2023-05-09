@@ -1,103 +1,80 @@
 #include "search_algos.h"
 
-/**
- * recursive_search - searches for a value in an array of
- * integers using the Binary search algorithm
- *
- *
- * @array: input array
- * @size: size of the array
- * @value: value to search in
- * Return: index of the number
- */
-int recursive_search(int *array, size_t size, int value)
-{
-	size_t half = size / 2;
-	size_t i;
-
-	if (array == NULL || size == 0)
-		return (-1);
-
-	printf("Searching in array");
-
-	for (i = 0; i < size; i++)
-		printf("%s %d", (i == 0) ? ":" : ",", array[i]);
-
-	printf("\n");
-
-	if (half && size % 2 == 0)
-		half--;
-
-	if (value == array[half])
-		return ((int)half);
-
-	if (value < array[half])
-		return (recursive_search(array, half, value));
-
-	half++;
-
-	return (recursive_search(array + half, size - half, value) + half);
-}
+int binary_helper(int *array, int lo, int hi, int value);
 
 /**
- * binary_search - calls to binary_search to return
- * the index of the number
+ * exponential_search - Performs exponential search on a sorted array of
+ * integers.
  *
- * @array: input array
- * @size: size of the array
- * @value: value to search in
- * Return: index of the number
- */
-int binary_search(int *array, size_t size, int value)
-{
-	int index;
-
-	index = recursive_search(array, size, value);
-
-	if (index >= 0 && array[index] != value)
-		return (-1);
-
-	return (index);
-}
-
-/**
- * exponential_search - searches for a value in an array of
- * integers using the Exponential search algorithm
+ * @array: Pointer to the sorted array of integers.
+ * @size: The size of the array.
+ * @value: The integer value to search for in the array.
  *
- * @array: input array
- * @size: size of the array
- * @value: value to search in
- * Return: index of the number
+ * Return: The index at which `value` is found. -1 if array is NULL.
  */
 int exponential_search(int *array, size_t size, int value)
 {
-	size_t index, next;
-	int result;
+	int lo, hi;
 
-	if (array == NULL)
+	if (array == NULL || size < 1)
 		return (-1);
 
-	if (array[0] == value)
-		return (0);
+	lo = 0;
+	hi = 1;
 
-	index = 1;
-
-	while (array[index] < value && index < size)
+	while (1)
 	{
-		printf("Value checked array[%d] = [%d]\n", (int)index, array[index]);
-		index *= 2;
+		if (hi < (int) size)
+		{
+			printf("Value checked array[%d] = [%d]\n", hi, array[hi]);
+			lo = hi;
+			hi *= 2;
+		}
+		else
+		{
+			hi = size - 1;
+			break;
+		}
+		if (array[hi] >= value)
+			break;
 	}
 
-	next = (index >= size) ? (size - 1) : index;
+	printf("Value found between indexes [%d] and [%d]\n", lo, hi);
 
-	index /= 2;
+	return (binary_helper(array, lo, hi, value));
+}
 
-	printf("Value found between indexes [%d] and [%d]\n", (int)index, (int)next);
+/**
+ * binary_helper - Performs binary search on the array.
+ *
+ * @array: Pointer to the sorted subarray of integers.
+ * @lo: Lowest index of the subarray.
+ * @hi: Highest index of the subarray.
+ * @value: The value to search for in the array.
+ *
+ * Return: The index of where `value` is first found in the subarray. -1 if
+ * `value` was not found.
+ */
+int binary_helper(int *array, int lo, int hi, int value)
+{
+	int i, m;
 
-	result = binary_search(array + index, (next + 1) - index, value);
+	while (lo <= hi)
+	{
+		printf("Searching in array: %d", array[lo]);
+		for (i = lo + 1; i < hi + 1; i++)
+			printf(", %d", array[i]);
+		printf("\n");
 
-	if (result >= 0)
-		result += index;
+		m = (hi - lo) / 2 + lo;
+		if (value == array[m])
+			return (m);
 
-	return (result);
+		if (value > array[m])
+			lo = m + 1;
+		else
+			hi = m - 1;
+	}
+
+	return (-1);
 }
